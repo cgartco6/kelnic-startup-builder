@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  kelnic:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - AYRSHARE_API_KEY=${AYRSHARE_API_KEY}
+    volumes:
+      - ./reports:/app/reports
+      - ./kelnic.db:/app/kelnic.db
